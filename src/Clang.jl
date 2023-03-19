@@ -33,7 +33,7 @@ include("index.jl")
 export Index
 
 include("trans_unit.jl")
-export TranslationUnit, spelling, parse_header, parse_headers
+export TranslationUnit, getTranslationUnitCursor, spelling, parse_header, parse_headers, load_ast
 
 include("module.jl")
 export get_module, ast_file, name
