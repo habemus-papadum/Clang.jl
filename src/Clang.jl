@@ -38,6 +38,7 @@ export TranslationUnit, getTranslationUnitCursor, spelling, parse_header, parse_
 include("module.jl")
 export get_module, ast_file, name
 export parent_module, full_name, is_system
+export is_toplevel, toplevel_module
 export toplevel_headers
 
 include("cursor.jl")

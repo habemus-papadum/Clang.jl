@@ -21,6 +21,17 @@ function parent_module(mod::CLModule)::CLModule
     return Clang.clang_Module_getParent(mod)
 end
 
+function is_toplevel(mod::CLModule)
+    return parent_module(mod).mod == C_NULL
+end
+
+function toplevel_module(mod::CLModule)
+    while !is_toplevel(mod)
+        mod = parent_module(mod)
+    end
+    mod
+end
+
 function name(mod::CLModule)
     return Clang.clang_Module_getName(mod) |> _cxstring_to_string
 end
